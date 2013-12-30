@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!--
+  File: build.xml
+  Author: Nick Schuch
+  Comment: This build file can both be used for import and an example.
+-->
+
+<project name="phing-vagrant" default="vagrant-up" basedir=".">
+
+    <!-- Imports -->
+
+    <taskdef name="vagrant-up" classname="VagrantUpTask" />
+    <taskdef name="vagrant-halt" classname="VagrantHaltTask" />
+    <taskdef name="vagrant-exec" classname="VagrantExecTask" />
+
+    <!-- Tasks -->
+
+    <target name="vagrant-up">
+      <vagrant-up />
+    </target>
+
+    <target name="vagrant-halt">
+      <vagrant-halt />
+    </target>
+
+    <target name="vagrant-exec">
+      <vagrant-exec baseDir="/vagrant" command="echo 1" />
+    </target>
+
+</project>
