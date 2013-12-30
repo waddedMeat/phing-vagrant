@@ -12,6 +12,7 @@
 
     <taskdef name="vagrant-up" classname="VagrantUpTask" />
     <taskdef name="vagrant-halt" classname="VagrantHaltTask" />
+    <taskdef name="vagrant-destroy" classname="VagrantDestroyTask" />
     <taskdef name="vagrant-exec" classname="VagrantExecTask" />
 
     <!-- Tasks -->
@@ -22,6 +23,10 @@
 
     <target name="vagrant-halt">
       <vagrant-halt />
+    </target>
+
+    <target name="vagrant-destroy">
+      <vagrant-destroy />
     </target>
 
     <target name="vagrant-exec">
