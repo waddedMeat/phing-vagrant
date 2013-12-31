@@ -42,7 +42,7 @@ class VagrantExecTask extends VagrantBaseTask {
     $this->log('Executing: ' . $command);
 
     // Execute on the host.
-    passthru($this->getVagrantExecutable() . ' ssh -c "' . $command . '"', $return);
+    passthru($this->getVagrantExecutable() . ' ssh-config | ssh -t -t -F /dev/stdin default "' . $command . '"', $return);
     return $return;
   }
 
