@@ -20,6 +20,12 @@ class VagrantBaseTask extends Task {
   private $vagrantExecutable = "vagrant";
 
   /**
+   * A string of environment variables.
+   * @var string
+   */
+  private $environmentVariables = "";
+
+  /**
    * Main entry point.
    */
   public function main() {}
@@ -30,7 +36,15 @@ class VagrantBaseTask extends Task {
   public function execute($command) {
     $return = NULL;
     $this->log('Executing: ' . $command);
-    passthru($this->getVagrantExecutable() . ' ' . $command, $return);
+    $comand = $this->getVagrantExecutable() . ' ' . $command;
+
+    $environment = getEnvironmentVariables();
+    if (empty($environment)) {
+      passthru($command, $return);
+    }
+    else {
+      passthru($environment . ' ' . $command, $return);
+    }
     return $return;
   }
 
@@ -52,6 +66,14 @@ class VagrantBaseTask extends Task {
 
   public function getVagrantExecutable() {
     return $this->vagrantExecutable;
+  }
+
+  public function setEnvironmentVariables($value) {
+    $this->environmentVariables = $value;
+  }
+
+  public function getEnvironmentVariables() {
+    return $this->environmentVariables;
   }
 
 }
