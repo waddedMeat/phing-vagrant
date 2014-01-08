@@ -39,17 +39,16 @@ class VagrantExecTask extends VagrantBaseTask {
     $command = 'cd ' . $this->getBaseDir() . ' && ' . $command;
 
     // Ensure the end user sees what is happening.
-    $this->log('Executing: ' . $command);
     $command = $this->getVagrantExecutable() . ' ssh-config | ssh -t -t -F /dev/stdin default "' . $command . '"';
 
     // Execute on the host.
     $environment = $this->getEnvironmentVariables();
-    if (empty($environment)) {
-      passthru($command, $return);
+    if (!empty($environment)) {
+      $command = $environment . ' ' . $command;
     }
-    else {
-      passthru($environment . ' ' . $command, $return);
-    }
+
+    $this->log('Executing: ' . $command);
+    passthru($command, $return);
     return $return;
   }
 

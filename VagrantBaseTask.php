@@ -39,12 +39,12 @@ class VagrantBaseTask extends Task {
     $command = $this->getVagrantExecutable() . ' ' . $command;
 
     $environment = $this->getEnvironmentVariables();
-    if (empty($environment)) {
-      passthru($command, $return);
+    if (!empty($environment)) {
+      $command = $environment . ' ' . $command;
     }
-    else {
-      passthru($environment . ' ' . $command, $return);
-    }
+
+    $this->log('Executing: ' . $command);
+    passthru($environment . ' ' . $command, $return);
     return $return;
   }
 
