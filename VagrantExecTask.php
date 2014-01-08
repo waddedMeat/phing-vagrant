@@ -43,7 +43,7 @@ class VagrantExecTask extends VagrantBaseTask {
     $command = $this->getVagrantExecutable() . ' ssh-config | ssh -t -t -F /dev/stdin default "' . $command . '"';
 
     // Execute on the host.
-    $environment = getEnvironmentVariables();
+    $environment = $this->getEnvironmentVariables();
     if (empty($environment)) {
       passthru($command, $return);
     }
