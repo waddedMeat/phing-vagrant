@@ -36,7 +36,7 @@ class VagrantBaseTask extends Task {
   public function execute($command) {
     $return = NULL;
     $this->log('Executing: ' . $command);
-    $comand = $this->getVagrantExecutable() . ' ' . $command;
+    $command = $this->getVagrantExecutable() . ' ' . $command;
 
     $environment = $this->getEnvironmentVariables();
     if (empty($environment)) {
