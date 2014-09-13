@@ -1,0 +1,21 @@
+{
+    "name": "moranjk/phing-vagrant",
+    "description": "composer port of https://github.com/nickschuch/phing-vagrant",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "nickschuch"
+        },
+        {
+            "name": "James Moran",
+            "email": "moranjk75@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": ["."]
+    },
+    "require": {
+        "phing/phing": "2.8.2"
+    }
+}
