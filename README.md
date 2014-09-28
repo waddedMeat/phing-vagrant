@@ -15,8 +15,8 @@ Provides a wrapper for vagrant. Primarily used for CI tasks.
 ## Installation.
 
 ```
-	"require": {
-       "moranjk/phing-vagrant": "dev-master"
+        "require": {
+        "waddedMeat/phing-vagrant": "dev-master"
     },
     "repositories": [
         {
