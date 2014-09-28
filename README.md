@@ -20,7 +20,7 @@ Provides a wrapper for vagrant. Primarily used for CI tasks.
     },
     "repositories": [
         {
-            "url": "https://github.com/moranjk/phing-vagrant.git",
+            "url": "https://github.com/waddedMeat/phing-vagrant.git",
             "type": "git"
         }
     ]
