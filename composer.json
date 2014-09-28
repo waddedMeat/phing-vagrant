@@ -1,5 +1,5 @@
 {
-    "name": "moranjk/phing-vagrant",
+    "name": "waddedMeat/phing-vagrant",
     "description": "composer port of https://github.com/nickschuch/phing-vagrant",
     "minimum-stability": "stable",
     "license": "proprietary",
@@ -8,8 +8,7 @@
             "name": "nickschuch"
         },
         {
-            "name": "James Moran",
-            "email": "moranjk75@gmail.com"
+            "email": "waddedmeat@gmail.com"
         }
     ],
     "autoload": {
