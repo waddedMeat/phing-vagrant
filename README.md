@@ -15,7 +15,7 @@ Provides a wrapper for vagrant. Primarily used for CI tasks.
 ## Installation.
 
 ```
-        "require": {
+    "require": {
         "waddedMeat/phing-vagrant": "dev-master"
     },
     "repositories": [
@@ -34,7 +34,7 @@ importing the build.xml.
 To add these tasks, add the following to your projects build.xml:
 
 ```
-<import file="vendor/moranjk/phing-vagrant/build.xml" optional="true" />
+<import file="vendor/waddedMeat/phing-vagrant/build.xml" optional="true" />
 ```
 
 To test the targets have been implemented run (you will see the tasks):
